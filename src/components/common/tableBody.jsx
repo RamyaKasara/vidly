@@ -1,6 +1,8 @@
 import { toBeDisabled } from "@testing-library/jest-dom/dist/matchers";
 import React, { Component } from "react";
 import _ from "lodash";
+
+
 class TableBody extends Component {
   //Using conditional rendering to render regular columns and buttons (like and delete)
   renderCell = (item, column) => {
@@ -12,6 +14,8 @@ class TableBody extends Component {
     return item._id + (column.path || column.key);
   };
 
+  
+
   render() {
     const { data, columns } = this.props;
     return (
@@ -20,7 +24,7 @@ class TableBody extends Component {
           <tr key={item._id}>
             {columns.map((column) => (
               <td key={this.createKey(item, column)}>
-                {this.renderCell(item, column)}
+                {this.renderCell(item, column)} 
               </td>
             ))}
           </tr>
